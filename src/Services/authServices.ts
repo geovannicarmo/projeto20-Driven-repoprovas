@@ -37,7 +37,7 @@ export async function loginServices(dataLogin: TUser) {
 
     
     
-    return {token}
+    return token
 }
 
 export async function getUserByIdServices(idUser: number) {

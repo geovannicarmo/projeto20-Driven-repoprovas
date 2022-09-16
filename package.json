@@ -4,10 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --no-cache -i",
-    "build": "tsc",
+    "test": "dotenv -e .env.test prisma migrate dev && dotenv -e .env.test prisma db seed && dotenv -e .env.test jest auth.test --no-cache && dotenv -e .env.test jest tests.test --no-cache",
+    "build": "tsc && prisma generate && prisma migrate deploy",
     "start": "node dist/server.js",
     "dev": "nodemon ./src/server.ts"
+  },
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
   },
   "author": "Geovanni do Carmo",
   "license": "ISC",
@@ -30,6 +33,7 @@
     "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
     "dotenv": "^16.0.2",
+    "dotenv-cli": "^6.0.0",
     "express": "^4.18.1",
     "express-async-errors": "^3.1.1",
     "joi": "^17.6.0",

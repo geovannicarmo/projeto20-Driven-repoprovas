@@ -7,8 +7,7 @@ export function errorHandlingMiddleware (
     res: Response, 
     next: NextFunction
     ) {
-    
-        console.log(err)
+  
 
         if(err.type){
            const statusCode = errorTypeToStatusCode(err.type)
@@ -16,8 +15,6 @@ export function errorHandlingMiddleware (
         }
 
 }
-
-
 
 export type TError = {
     type:string,
