@@ -6,8 +6,8 @@
   "scripts": {
     "test": "dotenv -e .env.test prisma migrate dev && dotenv -e .env.test prisma db seed && dotenv -e .env.test jest auth.test --no-cache && dotenv -e .env.test jest tests.test --no-cache",
     "build": "tsc && prisma generate && prisma migrate deploy",
-    
-    "start": "node dist/server.js",
+
+    "start": "node dist/server",
 
     "dev": "nodemon ./src/server.ts"
   },
