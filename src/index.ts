@@ -16,6 +16,3 @@ app.use(errorHandlingMiddleware)
 
 
 export default app
-
-const PORT = process.env.PORT
-app.listen(PORT, ()=>console.log(`Server run in port ${PORT}`))
