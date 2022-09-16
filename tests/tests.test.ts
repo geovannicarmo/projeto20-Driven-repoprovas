@@ -14,35 +14,63 @@ afterAll(async()=>{
 
 
 
-describe('GET /testsByDiscipline', ()=>{
+// describe('GET /testsByDiscipline', ()=>{
     
     
     
+//     it('token incorrect', async()=>{
+          
+//         const token = "vsdfzvczdvdxbzfd"
+          
+//           const result = await supertest(app).get("/getTestsByDiscipline").set('Authorization', `Bearer ${token}`).send()
+//         expect(result.status).toEqual(401)
+//     })
+
+//     it('did not send token', async()=>{
+
+//         const result = await supertest(app).get("/getTestsByDiscipline").send()
+//         expect(result.status).toEqual(401)
+//     })
+    
+//     it('return grouped tests', async()=>{
+
+//         const body:any  = await signFactory()
+//         const signin =  await  supertest(app).post("/signin").send(body)
+//         delete body.passwordConfirm
+//         const token = (await  supertest(app).post("/login").send(body)).text
+        
+//         const result = await supertest(app).get("/getTestsByDiscipline").set('Authorization', `Bearer ${token}`)
+//         console.log(result.body)
+//         expect(result.status).toEqual(200)
+//         expect(result.body).toBeInstanceOf(Array)
+//     })
+    
+// })
+
+describe('POST /tests', ()=>{
+
     it('token incorrect', async()=>{
           
         const token = "vsdfzvczdvdxbzfd"
-          
-          const result = await supertest(app).get("/getTestsByDiscipline").set('Authorization', `Bearer ${token}`).send()
+
+        const result = await supertest(app).get("/getTestsByDiscipline").set('Authorization', `Bearer ${token}`).send()
         expect(result.status).toEqual(401)
     })
 
-    it('did not send token', async()=>{
 
-        const result = await supertest(app).get("/getTestsByDiscipline").send()
-        expect(result.status).toEqual(401)
-    })
-    
     it('return grouped tests', async()=>{
 
         const body:any  = await signFactory()
-        const signin =  await  supertest(app).post("/signin").send(body)
+        await  supertest(app).post("/signin").send(body)
         delete body.passwordConfirm
         const token = (await  supertest(app).post("/login").send(body)).text
-        
-        const result = await supertest(app).get("/getTestsByDiscipline").set('Authorization', `Bearer ${token}`)
+        console.log(token)
+        const result = await supertest(app).post("/tests").set('Authorization', `Bearer ${token}`)
         console.log(result.body)
         expect(result.status).toEqual(200)
         expect(result.body).toBeInstanceOf(Array)
     })
-    
+
+
+
 })
