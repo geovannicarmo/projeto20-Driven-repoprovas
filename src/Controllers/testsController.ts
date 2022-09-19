@@ -4,7 +4,7 @@ import * as testsServices from '../Services/testsService'
 
 export async function postTestsController(req:Request, res: Response){
 
-    console.log(res.locals.idUser)
+   
 
     const dataPostTest = req.body
 

@@ -15,50 +15,6 @@ export async function isTeachersDisciplines(idsTeacherAndDisciplineld: any){
     })
 }
 
-// export async function getTestsByDisciplinesRepository(){
-
-//     return await client.terms.findMany({
-
-//         select: {
-//             number: true,
-//             id: true,
-//             Discipline:{
-//                 select:{
-//                     name:true,
-//                     id:true,
-//                     TeachersDisciplines:{
-//                             select:{
-//                                 id: true,
-//                                 Teachers:{
-//                                     select:{
-//                                         name:true,
-//                                         id: true
-//                                     }
-//                                 },
-//                                 Tests:{
-//                                     select:{
-//                                         id:true,
-//                                         name:true,
-//                                         category: {
-//                                             select:{
-//                                                 name: true,
-//                                                 id: true,
-
-                                                
-//                                             }
-//                                         }
-//                                     }
-//                                 }
-                        
-//                             }
-                        
-//                     }
-//                 }
-//             }
-//         }
-        
-//     })
-// }
 
 
 
@@ -83,6 +39,9 @@ export async function getTestsByDisciplinesRepository(){
         },
     })
 }
+
+
+
 
 
 export async function getTestsByTeachersRepository(){

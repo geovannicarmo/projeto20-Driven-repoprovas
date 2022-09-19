@@ -75,7 +75,6 @@ await client.teachersDisciplines.createMany({
 
 main()
   .catch(e => {
-    console.log(e);
     process.exit(1);
   })
   .finally(() => {

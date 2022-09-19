@@ -10,7 +10,7 @@ export default async function verifyTokenMiddlewerw(
     ){
        const authorization = req.headers.authorization
 
-       console.log(authorization)
+      
 
        if(!authorization){
         return res.status(401).send("token not send")

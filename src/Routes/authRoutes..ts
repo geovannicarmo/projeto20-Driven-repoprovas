@@ -5,7 +5,7 @@ import schemaMiddleware from '../meddleware/schemaMeddleware'
 
 const authRouter = Router()
 
-authRouter.post('/signin', schemaMiddleware(signinSchema), signinController)
+authRouter.post('/signup', schemaMiddleware(signinSchema), signinController)
 authRouter.post('/login', schemaMiddleware(loginSchema), loginController)
 
 export default authRouter
