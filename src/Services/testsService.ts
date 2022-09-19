@@ -21,8 +21,9 @@ export async function postTestsService(dataPostTest:any){
         categoryId: Number(dataPostTest.categoryId),
         teacherDisciplineldId: TeachersDisciplines.id
     }
-console.log(dataTests)
+
     await testsRepository.postTestsRepository(dataTests)
+    return
 
 }
 
