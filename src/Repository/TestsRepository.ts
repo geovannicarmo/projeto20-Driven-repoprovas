@@ -3,9 +3,11 @@ import { client } from "../dbs/pismaClient";
 
 export async function postTestsRepository(dataPostTest: TTests){
 
-    await client.tests.create({
+   const postTest =  await client.tests.create({
         data: dataPostTest
     })
+
+    console.log(postTest)
 }
 
 export async function isTeachersDisciplines(idsTeacherAndDisciplineld: any){
