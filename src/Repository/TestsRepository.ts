@@ -49,18 +49,22 @@ export async function getTestsByTeachersRepository(){
     return await client.teachers.findMany({
 
 
-        select:{
-            name:true,
-            id: true,
+        include:{
             TeachersDisciplines:{ 
-                select: {
-                    id: true,
-                    Tests:{
-                                            
-                    }
-                }   
-            }
-        }
+                include: {
+                    Discipline: true,
+                    Tests: {
+                        include: {
+                            category: true,
+                        },
+                    },
+                }
+            },
+        },
+                    
+                
+            
+        
                                 
 
     })
