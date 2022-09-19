@@ -23,7 +23,6 @@ export async function postTestsService(dataPostTest:any){
     }
 
     await testsRepository.postTestsRepository(dataTests)
-    return
 
 }
 

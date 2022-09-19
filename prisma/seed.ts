@@ -24,7 +24,7 @@ async function main() {
       data:[
         {name: "Projeto"},
         {name: "Prática"},
-        {name: "Prática"},
+        {name: "Recuperação"},
         
       ],
       skipDuplicates: true
@@ -58,7 +58,7 @@ async function main() {
 await client.teachersDisciplines.createMany({
 
   data:[
-      {teacherId: 1, disciplineId: 1, },
+      {teacherId: 1, disciplineId: 1,},
       {teacherId: 1, disciplineId: 2,},
       {teacherId: 1, disciplineId: 3,},
       {teacherId: 2, disciplineId: 4,},
